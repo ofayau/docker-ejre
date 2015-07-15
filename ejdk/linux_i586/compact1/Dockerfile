@@ -6,6 +6,7 @@ MAINTAINER Olivier Fayau
 # About Compact Profiles (JEP 161) : http://openjdk.java.net/jeps/161
 # Official depo (need login) : http://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/index.html
 
-ADD ejdk1.8.0_51/linux_i586/compact1/ /usr/lib/jvm/ejdk1.8.0_51-compact1/
+#ADD ejdk1.8.0_51/linux_i586/compact1/ /usr/lib/jvm/ejdk1.8.0_51-compact1/
+ADD . /usr/lib/jvm/ejdk1.8.0_51-compact1/
 RUN ln -s /usr/lib/jvm/ejdk1.8.0_51-compact1 /usr/lib/jvm/jre
 

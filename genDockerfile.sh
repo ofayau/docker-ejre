@@ -6,7 +6,10 @@ ejdk=ejdk1.8.0_51
 
 # Generate docker files
 for profile in compact1 compact2 compact3 jre; do
-	echo "Generate Dockerfile for $profile"
-	sed -e "s/%JRE%/$ejdk/g" -e "s/%PROFILE%/$profile/g" Dockerfile.tpl > Dockerfile.$profile
+	echo "Generate Dockerfile for $ejdk $profile"
+	# Create Dockerfile
+	sed -e "s/%JRE%/$ejdk/g" -e "s/%PROFILE%/$profile/g" Dockerfile.tpl > ejdk/linux_i586/$profile/Dockerfile
+	# Ignore Dockerfile from copying
+	echo "Dockerfile" > ejdk/linux_i586/$profile/.dockerignore
 done
 
