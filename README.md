@@ -41,19 +41,42 @@ java                 8-jre        b0f21df5333b    5 months ago    478.7 MB
 
 # License
 
+- Busybox : see [license information](http://www.busybox.net/license.html).
+- Debian libc-i386 : see [debian glibc](https://packages.debian.org/jessie/libc6-i386)
+- Oracle and Java : see [OTN licence](http://www.oracle.com/technetwork/licenses/standard-license-152015.html).
+Oracle and Java are registered trademarks of Oracle and/or its affiliates.
+The Java softwares (jdk or jre) belong to Oracle and this redistribution is not for commercial use.
 The ejdk directory is the unzipped version of `ejdk-8u51-linux-i586.tar.gz` available (with login) on [Oracle](http://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/index.html)
 
-The java (jdk or jre) softwares belong to Oracle and this redistribution is not for commercial use.
+### Installation & Usage
 
-### Installation & Usage 
-
-Download `compact2` : 
+Download/update `compact3` : 
 ```shell
-docker pull ofayau/ejre:8-compact2
+docker pull ofayau/ejre:8-compact3
 ```
 
 Run :
 ```shell
 docker run ofayau/ejre:8-compact2 java -version
+```
+
+Samples by showing version
+```shell
+$ docker run --rm -it ofayau/ejre:8-compact1 java -version
+java version "1.8.0_51"
+Java(TM) SE Embedded Runtime Environment (build 1.8.0_51-b07, profile compact1, headless)
+Java HotSpot(TM) Embedded Server VM (build 25.51-b07, mixed mode)
+$ docker run --rm -it ofayau/ejre:8-compact2 java -version
+java version "1.8.0_51"
+Java(TM) SE Embedded Runtime Environment (build 1.8.0_51-b07, profile compact2, headless)
+Java HotSpot(TM) Embedded Server VM (build 25.51-b07, mixed mode)
+$ docker run --rm -it ofayau/ejre:8-compact3 java -version
+java version "1.8.0_51"
+Java(TM) SE Embedded Runtime Environment (build 1.8.0_51-b07, profile compact3, headless)
+Java HotSpot(TM) Embedded Server VM (build 25.51-b07, mixed mode)
+$ docker run --rm -it ofayau/ejre:8-jre java -version
+java version "1.8.0_51"
+Java(TM) SE Embedded Runtime Environment (build 1.8.0_51-b07, headless)
+Java HotSpot(TM) Embedded Server VM (build 25.51-b07, mixed mode)
 ```
 
