@@ -1,22 +1,27 @@
 # docker-ejre
 
-### About
+This project create docker images for Oracle Java SE Embedded 8u51.
 
-This project create docker images for Oracle Java SE Embedded 8u51. 
+There is an image for each "compact profile" (see [JEP 161](http://openjdk.java.net/jeps/161) ) : `compact1`, `compact2`, `compact3` and `jre` (=full headless)
+
+There is no compiler ("jdk" with `javac`) in this image, only runtime ("jre" with `java`).
+
+### Supported tags and respective `Dockerfile` links
+
+There are a tagged image for each "compact profile" :
+
+-	[`8-jre`, `latest` (*ejre/Dockerfile*)](https://github.com/ofayau/docker-ejre/blob/master/ejdk/linux_i586/jre/Dockerfile)
+-	[`8-compact3` (*ejre/Dockerfile*)](https://github.com/ofayau/docker-ejre/blob/master/ejdk/linux_i586/compact3/Dockerfile)
+-	[`8-compact2` (*ejre/Dockerfile*)](https://github.com/ofayau/docker-ejre/blob/master/ejdk/linux_i586/compact2/Dockerfile)
+-	[`8-compact1` (*ejre/Dockerfile*)](https://github.com/ofayau/docker-ejre/blob/master/ejdk/linux_i586/compact1/Dockerfile)
+
+### Embedded
+
 These jre are very small because they're made for embedded system.
-The drawbacks are they're 32 bits only and some doesn't contain every java package (see Compact Profiles [JEP 161](http://openjdk.java.net/jeps/161) ).
+The drawbacks are they're 32 bits only and some doesn't contain every java package (=subset of full jre).
 
 All image are based on Busybox with 32 bits (and 64 bits) libs (see project [docker-busybox-lib32](https://github.com/ofayau/docker-busybox-lib32) ).
 The overhead on top of jre is around 8 MB.
-
-The ejdk directory is the unzipped version of `ejdk-8u51-linux-i586.tar.gz` available (with login) on [Oracle](http://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/index.html)
-
-There are a tagged image for each profile (see Compact Profiles [JEP 161](http://openjdk.java.net/jeps/161) ) :
-
-- ofayau/ejre:8-compact1
-- ofayau/ejre:8-compact2
-- ofayau/ejre:8-compact3
-- ofayau/ejre:8-jre
 
 ### About size
 
@@ -30,13 +35,19 @@ ofayau/ejre                  8-jre               d5ed29a4bf44        4 minutes a
 ofayau/openjdk               8-compact1          f258bd30ec46        5 days ago          47.08 MB
 ofayau/openjdk               8-compact2          dc125eeac09b        5 days ago          59.82 MB
 ofayau/openjdk               8-compact3          b10fc16f53ea        5 days ago          66.38 MB
-ofayau/openjdk               latest              fded935a77ed        5 days ago          115.1 MB
+ofayau/openjdk               8-jre               fded935a77ed        5 days ago          115.1 MB
 java                         8-jre               b0f21df5333b        5 months ago        478.7 MB
 ```
 
+# License
+
+The ejdk directory is the unzipped version of `ejdk-8u51-linux-i586.tar.gz` available (with login) on [Oracle](http://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/index.html)
+
+The java (jdk or jre) softwares belong to Oracle and this redistribution is not for commercial use.
+
 ### Installation & Usage 
 
-Download : 
+Download `compact2` : 
 ```shell
 docker pull ofayau/openjdk:8-compact2
 ```
