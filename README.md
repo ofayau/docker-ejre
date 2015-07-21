@@ -19,17 +19,30 @@ There are a tagged image for each "compact profile" :
 
 ### What are these?
 
-All image are based on Busybox with 32 bits (and 64 bits) libs (see project [docker-busybox-lib32](https://github.com/ofayau/docker-busybox-lib32) ).
+tl;dr : Busybox + libc 64bit + libc 32 bits + Embedded JRE = Small Java Container
 
-You can still navigate inside container or develop some shell scripting.
+All image are based on Busybox with 32 bits (and 64 bits) libs (see [docker-busybox-jvm](https://github.com/ofayau/docker-busybox-jvm) and [docker-busybox-lib32](https://github.com/ofayau/docker-busybox-lib32) ).
 
-The overhead on top of a jre is around 8 MB.
+The overhead on top of a JRE is around 8 MB.
+
+JVM aren't statically linked so you can still navigate inside container or use some shell scripting.
+
+JRE are always installed in `/usr/lib/jvm` and link to `/usr/lib/jvm/jre`.
+
+Sample :
+
+```sh
+/ # ls -l /usr/lib/jvm/
+total 4
+drwxr-xr-x    4 root     root          4096 Jul 15 23:03 ejdk1.8.0_51-compact1
+lrwxrwxrwx    1 root     root            34 Jul 15 23:03 jre -> /usr/lib/jvm/ejdk1.8.0_51-compact1
+```
 
 ### Size matters
 
 The biggest advantage of these image are their size : only 40 MB for a "compact" edition and 80 MB for a full SE JRE.
 
-It's 6 or 12 times smaller than the official java image (headfull and based on a full Debian) !
+It's 6 or 12 times smaller than the official java image (cause it's headfull and based on a full Debian) !
 
 Here is a list of some java image.
 
