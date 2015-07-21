@@ -4,7 +4,7 @@ This project create docker images for Oracle Java SE Embedded 8u51.
 
 There is an image for each "compact profile" (see [JEP 161](http://openjdk.java.net/jeps/161) ) : `compact1`, `compact2`, `compact3` and `jre` (=full headless)
 
-There is no compiler ("jdk" with `javac`) in this image, only runtime ("jre" with `java`).
+These images are `jre` not `jdk` : hence there is no compiler (`javac`), only runtime executor (`java`).
 
 ### Supported tags and respective `Dockerfile` links
 
@@ -26,17 +26,17 @@ The overhead on top of jre is around 8 MB.
 ### About size
 
 ```shell
-REPOSITORY                   TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
-ofayau/j2me                  latest              f56c31b1cc20        26 hours ago        21.73 MB
-ofayau/ejre                  8-compact1          824a6f1a0ade        4 minutes ago       39.31 MB
-ofayau/ejre                  8-compact2          9da39771057a        4 minutes ago       44.85 MB
-ofayau/ejre                  8-compact3          a9fbe6b90034        4 minutes ago       48.79 MB
-ofayau/ejre                  8-jre               d5ed29a4bf44        4 minutes ago       80.66 MB
-ofayau/openjdk               8-compact1          f258bd30ec46        5 days ago          47.08 MB
-ofayau/openjdk               8-compact2          dc125eeac09b        5 days ago          59.82 MB
-ofayau/openjdk               8-compact3          b10fc16f53ea        5 days ago          66.38 MB
-ofayau/openjdk               8-jre               fded935a77ed        5 days ago          115.1 MB
-java                         8-jre               b0f21df5333b        5 months ago        478.7 MB
+REPOSITORY           TAG          IMAGE ID        CREATED         VIRTUAL SIZE
+ofayau/j2me          latest       f56c31b1cc20    26 hours ago    21.73 MB
+ofayau/ejre          8-compact1   824a6f1a0ade    4 minutes ago   39.31 MB
+ofayau/ejre          8-compact2   9da39771057a    4 minutes ago   44.85 MB
+ofayau/ejre          8-compact3   a9fbe6b90034    4 minutes ago   48.79 MB
+ofayau/ejre          8-jre        d5ed29a4bf44    4 minutes ago   80.66 MB
+ofayau/openjdk       8-compact1   f258bd30ec46    5 days ago      47.08 MB
+ofayau/openjdk       8-compact2   dc125eeac09b    5 days ago      59.82 MB
+ofayau/openjdk       8-compact3   b10fc16f53ea    5 days ago      66.38 MB
+ofayau/openjdk       8-jre        fded935a77ed    5 days ago      115.1 MB
+java                 8-jre        b0f21df5333b    5 months ago    478.7 MB
 ```
 
 # License
@@ -49,11 +49,11 @@ The java (jdk or jre) softwares belong to Oracle and this redistribution is not 
 
 Download `compact2` : 
 ```shell
-docker pull ofayau/openjdk:8-compact2
+docker pull ofayau/ejre:8-compact2
 ```
 
 Run :
 ```shell
-docker run ofayau/openjdk:8-compact2 java -version
+docker run ofayau/ejre:8-compact2 java -version
 ```
 
