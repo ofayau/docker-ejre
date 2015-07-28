@@ -10,3 +10,5 @@ MAINTAINER Olivier Fayau
 ADD . /usr/lib/jvm/%JRE%-%PROFILE%/
 RUN ln -s /usr/lib/jvm/%JRE%-%PROFILE% /usr/lib/jvm/jre
 
+CMD ["java", "-version"]
+

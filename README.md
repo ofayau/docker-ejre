@@ -75,7 +75,7 @@ java                        8-jre        b0f21df5333b    5 months ago    478.7 M
 
 - *Busybox* : see [license information](http://www.busybox.net/license.html).
 
-- *Debian libc-i386* : see [licence](http://ftp-master.metadata.debian.org/changelogs//main/g/glibc/glibc_2.19-18_copyright) of [debian package](https://packages.debian.org/jessie/libc6-i386).
+- *Debian libc-i386* : see [licence](http://ftp-master.metadata.debian.org/changelogs/main/g/glibc/glibc_2.19-18_copyright) of [debian package](https://packages.debian.org/jessie/libc6-i386).
 
 - *Oracle and Java* : see [OTN licence](http://www.oracle.com/technetwork/licenses/standard-license-152015.html).
 

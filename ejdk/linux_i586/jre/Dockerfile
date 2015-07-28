@@ -10,3 +10,5 @@ MAINTAINER Olivier Fayau
 ADD . /usr/lib/jvm/ejdk1.8.0_51-jre/
 RUN ln -s /usr/lib/jvm/ejdk1.8.0_51-jre /usr/lib/jvm/jre
 
+CMD ["java", "-version"]
+
