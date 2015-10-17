@@ -8,7 +8,11 @@ MAINTAINER Olivier Fayau
 
 #ADD ejdk1.8.0_51/linux_i586/jre/ /usr/lib/jvm/ejdk1.8.0_51-jre/
 ADD . /usr/lib/jvm/ejdk1.8.0_51-jre/
+
+# symlink for $JAVA_HOME (/usr/lib/jvm/jre) 
 RUN ln -s /usr/lib/jvm/ejdk1.8.0_51-jre /usr/lib/jvm/jre
+# symlink for linkage
+RUN mkdir -p /usr/java && ln -s /usr/lib/jvm/jre /usr/java/packages
 
 CMD ["java", "-version"]
 

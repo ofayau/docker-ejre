@@ -8,7 +8,11 @@ MAINTAINER Olivier Fayau
 
 #ADD %JRE%/linux_i586/%PROFILE%/ /usr/lib/jvm/%JRE%-%PROFILE%/
 ADD . /usr/lib/jvm/%JRE%-%PROFILE%/
+
+# symlink for $JAVA_HOME (/usr/lib/jvm/jre) 
 RUN ln -s /usr/lib/jvm/%JRE%-%PROFILE% /usr/lib/jvm/jre
+# symlink for linkage
+RUN mkdir -p /usr/java && ln -s /usr/lib/jvm/jre /usr/java/packages
 
 CMD ["java", "-version"]
 
